@@ -142,9 +142,12 @@ span.highlight {
 }
 
 .logo-section {
-  margin: 24px 0 8px;
-  padding: 20px 12px;
+  margin: 28px 0 12px;
+  padding: 24px 16px;
   border-top: 1px solid #e5e7eb;
+  --logo-spacing-x: 22px;
+  --logo-spacing-y: 14px;
+  --logo-max-height: 92px;
 }
 
 .logo-section h3 {
@@ -158,8 +161,7 @@ span.highlight {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
-  margin: 10px 0;
+  margin: 8px 0;
 }
 
 .logo-item {
@@ -169,6 +171,7 @@ span.highlight {
   width: auto;
   min-width: 0;
   padding: 0;
+  margin: var(--logo-spacing-y) var(--logo-spacing-x);
   background: transparent;
   border: 0;
   color: #374151;
@@ -178,8 +181,8 @@ span.highlight {
 .logo-item img {
   display: block;
   max-width: 100%;
-  max-height: 100px;
-  height: 100px;
+  max-height: var(--logo-max-height);
+  height: var(--logo-max-height);
   width: auto;
   object-fit: contain;
 }
@@ -191,12 +194,14 @@ span.highlight {
 }
 
 @media (max-width: 600px) {
-  .logo-row {
-    gap: 8px;
+  .logo-section {
+    --logo-spacing-x: 16px;
+    --logo-spacing-y: 10px;
+    --logo-max-height: 78px;
   }
 
   .logo-item {
-    width: calc(50% - 8px);
+    width: calc(50% - 16px);
     min-width: 0;
   }
 }
